@@ -11,7 +11,7 @@
 ##############################################################
 
 
-#π§≥Ãƒø¬º
+#Â∑•Á®ãÁõÆÂΩï
 IPNC_INSTALL_DIR = ..
 PROJECT_ROOT	:= $(IPNC_INSTALL_DIR)/zmdnetlib
 
@@ -24,7 +24,7 @@ OUT_PUT = output
 
 REVISION = `svn info | grep Revision | cut -d " " -f 2`
 
-#±‡“Îπ§æﬂ
+#ÁºñËØëÂ∑•ÂÖ∑
 
 # Compile command.
 
@@ -41,20 +41,20 @@ AR		:= $(CROSS_COMPILER)ar
 
 
 ##############################################################################################################
-#“˝”√π§≥ÃÕ∑Œƒº˛
+#ÂºïÁî®Â∑•Á®ãÂ§¥Êñá‰ª∂
 
 INCLUDE_DIR	:= parameter normal_api alarm App record xmlResolve encode blockmanage upgrade at88sc0104 \
 				peripheral filemanage logmanage  ptz neti  snapProcess gui g3modem  wifi \
 				encode decode mediaplayer buffermanage his_api/mpp zmdnetlib message
 			
 				
-#Õ¯¬Áø‚ÀΩ”–Õ∑Œƒº˛				
+#ÁΩëÁªúÂ∫ìÁßÅÊúâÂ§¥Êñá‰ª∂				
 LIB_INCLUDE_DIR = ddns  libxml  miniupnpc  nvc  sip  upnp  zmdnetlib  tcplib 
 
 
 ###############################################################################################################
 
-#Õ¯¬Áø‚‘¥¬Î			
+#ÁΩëÁªúÂ∫ìÊ∫êÁ†Å			
 PROJECT_DIR	:= $(PROJECT_ROOT)/zmdnetlib \
 				$(PROJECT_ROOT)/tcplib \
 				$(PROJECT_ROOT)/ddns \
@@ -66,20 +66,20 @@ PROJECT_SRC	:= $(foreach PROJECT_DIR,$(PROJECT_DIR),$(wildcard $(PROJECT_DIR)/*.
 
 ###############################################################################################################
 
-#÷–º‰Œƒº˛
+#‰∏≠Èó¥Êñá‰ª∂
 OBJECTS_DIR	:= $(PROJECT_ROOT)/objects
 OBJECT_FILE	:= $(addprefix $(OBJECTS_DIR)/, $(addsuffix .o, $(basename $(notdir $(PROJECT_SRC)))))
 DEPFILE:=$(PROJECT_ROOT)/deps
 
 #####################################################################################################################################################
-#±‡“Î—°œÓ
+#ÁºñËØëÈÄâÈ°π
 
 ifeq ($(TARGET_PLATFORM), 3518)
 
 CFLAGS 		:= -D ZMDISSOAS13NM -D APP3518 -D SUPPORT_WIFI 	-D SUPPORT_AUDIO -D_USE_CRYPT_ -DPJ_IS_LITTLE_ENDIAN=1 \
 			-DPJ_IS_BIG_ENDIAN=0  \
 #			-DREVISION=$(REVISION)
-#-DSUPPORTONVIF			
+#-DSUPPORTONVIF		need to also define #SUPPORTONVIF..	
 			
 endif
 
